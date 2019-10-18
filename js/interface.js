@@ -3,17 +3,25 @@ var config = "resizable=no, width=800, height=600,scrollbars=yes,left=300, top=1
 
 function abrir_Popup() {
   ventana = window.open("indexEmerge.html", "CALCULA_DÍAS", config);
-}                    
+}   
 
-function abrirAgregar(pesta){
-    var dentroPesta;
-    dentroPesta=document.getElementById('Sumar');
-    dentroPesta.style.display=none;
-}
+function abrirPesta(evt, pesta) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
-function abrirAgregar(pesta){
-    var dentroPesta;
-    dentroPesta=document.getElementById('Restar');
-    
-    dentroPesta.style.display=none;
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(pesta).style.display = "block";
+  evt.currentTarget.className += " active";
 }
