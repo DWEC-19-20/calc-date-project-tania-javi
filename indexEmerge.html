@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
+    <link rel="stylesheet" type="text/html" href="css/mystyle.css">
+    <script src="js/interface.js"></script>
+</head>
+
+<body>
+    <center>
+        <h1>Calculadora días</h1>
+
+
+        <div class="tab">
+            <button class="tablinks" onclick="abrirPesta(event, 'Suma')" id="defaultOPen">Suma</button>
+
+            <button class="tablinks" onclick="abrirPesta(event, 'Rango')">Rango</button>
+
+
+            <!-- Tab content -->
+            <div id="Suma" class="tabcontent"><br>
+                <h3>Introduce una fecha y un número de días para calcular qué fecha será</h3>
+                <h4>Los días pueden ser negativos</h4>
+                <p>
+                        <input type="date" id="fecha">
+                        <button onclick="hola()">Click</button>
+                        <script> function hola() {
+                                fecha = document.getElementById("fecha").value;
+                                console.log(fecha);
+                            }</script>
+<br>
+                        Introduce el número de días:
+                        <input type="number" id="days">
+                        <button onclick="hola2()">Click</button>
+                        <script> function hola2() {
+                                fecha = document.getElementById("days").value;
+                                console.log(fecha);
+                            }</script>
+                        
+
+
+                </p>
+            </div>
+
+            <div id="Rango" class="tabcontent"><br>
+                <h3>Introduce dos fechas distintas y calcula cuántos días hay entre ellas</h3>
+                <p>
+                        <input type="date" id="startdate">
+                        <button onclick="hola()">Click</button>
+                        <script> function hola() {
+                                fecha = document.getElementById("startdate").value;
+                                console.log(fecha);
+                            }</script> 
+
+                        <input type="date" id="enddate">
+                        <button onclick="hola()">Click</button>
+                        <script> function hola() {
+                               fecha = document.getElementById("enddate").value;
+                               console.log(fecha2);
+    }</script>
+                </p>
+            </div>
+        </div>
+
+        <script> document.getElementById("defaultOPen").click();</script>
+
+
+
+       
+
+    </center>
+</body>
+
+</html>
