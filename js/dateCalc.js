@@ -1,12 +1,46 @@
+/* EVENTOS
+*/
 
+
+
+
+
+/* OPERACIONES
+*/
+
+const MILSEGPORDIA = 86400000;
+
+/* Función que pasa los valores de las fechas de String a entero
+*/
+
+function stringAEnt(fecha) {
+  fecha = document.getElementById("fecha").value;
+  var fechaSalida= new Date(fecha);
+
+  return fechaSalida;
+}
+
+/* Función que devuelve el valor del input radio para seleccionar 
+   una suma o una resta
+*/
+
+function valorRadio() {
+
+}
 
 /* Función que suma o resta un número de dias naturales según el valor de operation 
    startdate: objeto Fecha 
    days: número de días naturales
    return el resultado como un string en formato dd/mm/YYYY
 */
-function calcDate(startdate, days) { 
-  return new Date().toLocaleDateString("es-ES");
+/* usar setDate y getDate*/
+function calcDate(startdate, days) {
+
+  var entrada = startdate.getTime();
+  var dias = days * MILSEGPORDIA;
+  var fechaFinal = entrada + dias;
+
+  return new Date(fechaFinal).toLocaleDateString("es-ES");
 }
 
 /* Función que recibe dos fechas de tipo Date y devuelva el el número de días naturales que hay entre
@@ -16,7 +50,15 @@ function calcDate(startdate, days) {
   return número de días naturales entre las dos fechas
 */
 function getDays(startdate, endDate) {
-   return 0;
+
+  var entrada = startdate.getTime();
+  var salida = endDate.getTime();
+  var totalDias;
+
+
+  totalDias = Math.round((salida - entrada) / MILSEGPORDIA);
+
+  return totalDias;
 }
 
 /* Función que suma o resta un número de dias hábiles según el valor de operation 
@@ -24,7 +66,7 @@ function getDays(startdate, endDate) {
    days: número de días hábiles
    return el resultado como un string en formato dd/mm/YYYY
 */
-function calcWorkingDate(startdate, days) { 
+function calcWorkingDate(startdate, days) {
   return new Date().toLocaleDateString("es-ES");
 }
 
@@ -34,6 +76,8 @@ function calcWorkingDate(startdate, days) {
   endDate: objeto Fecha inicio
   return número de días hábiles entre las dos fechas*/
 function getWorkingDays(startdate, endDate) {
-   return 0;
+  return 0;
 }
+
+
 
