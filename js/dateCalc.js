@@ -14,10 +14,18 @@ const MILSEGPORDIA = 86400000;
 */
 
 function stringAEnt(fecha) {
-  var year = parseInt(fecha.substring(0, 4));
-  var month = parseInt(fecha.substring(5, 7));
-  var day = parseInt(fecha.substring(8, 10));
-  return new Date(year, month, day);
+  fecha = document.getElementById("fecha").value;
+  var fechaSalida= new Date(fecha);
+
+  return fechaSalida;
+}
+
+/* Función que devuelve el valor del input radio para seleccionar 
+   una suma o una resta
+*/
+
+function valorRadio() {
+
 }
 
 /* Función que suma o resta un número de dias naturales según el valor de operation 
@@ -25,8 +33,14 @@ function stringAEnt(fecha) {
    days: número de días naturales
    return el resultado como un string en formato dd/mm/YYYY
 */
+/* usar setDate y getDate*/
 function calcDate(startdate, days) {
-  return new Date().toLocaleDateString("es-ES");
+
+  var entrada = startdate.getTime();
+  var dias = days * MILSEGPORDIA;
+  var fechaFinal = entrada + dias;
+
+  return new Date(fechaFinal).toLocaleDateString("es-ES");
 }
 
 /* Función que recibe dos fechas de tipo Date y devuelva el el número de días naturales que hay entre
@@ -37,11 +51,14 @@ function calcDate(startdate, days) {
 */
 function getDays(startdate, endDate) {
 
-  var entrada = stringAEnt(startdate);
-  var salida = stringAEnt(endDate);
-  var dias = Math.round((salida.getDate() - entrada.getDate()) / MILSEGPORDIA);
+  var entrada = startdate.getTime();
+  var salida = endDate.getTime();
+  var totalDias;
 
-  return dias;
+
+  totalDias = Math.round((salida - entrada) / MILSEGPORDIA);
+
+  return totalDias;
 }
 
 /* Función que suma o resta un número de dias hábiles según el valor de operation 
