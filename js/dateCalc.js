@@ -9,9 +9,52 @@
 */
 
 const MILSEGPORDIA = 86400000;
-
+const ARRAYFESTIVOS= [new Date('2019/01/01'), new Date('2019/01/06'), new Date('2019/04/01'), new Date('2019/07/15'), new Date('2019/07/12'), new Date('2019/10/01'), new Date('2019/11/06'), new Date('2019/11/08'), new Date('2019/11/25')];
+const festivo=false;
 /* Función que pasa los valores de las fechas de String a entero
 */
+
+
+/* Función que suma o resta un número de dias hábiles según el valor de operation 
+   startdate: objeto Fecha 
+   days: número de días hábiles
+   return el resultado como un string en formato dd/mm/YYYY
+*/
+
+function esFestivo(startdate){
+  var entrada=startdate.getMonth(); 
+  var entrada2=startdate.getDate();
+  for ($i=0; $i<ARRAYFESTIVOS.length; $i++){
+    var diaFesti=ARRAYFESTIVOS[$i].getMonth(); 
+    var diaFesti2=ARRAYFESTIVOS[$i].getDate();
+    if ((entrada==diaFesti) && (entrada2==diaFesti2)){
+      festivo=true;
+    } 
+  }
+  return festivo;
+
+}
+
+function calcWorkingDate(startdate, days) {
+ 
+  return new Date().toLocaleDateString("es-ES");
+}
+/*
+var entrada = startdate.getTime();
+var dias = days * MILSEGPORDIA;
+var fechaFinal = entrada + dias;
+*/
+return new Date(fechaFinal).toLocaleDateString("es-ES");
+/* Función que recibe dos fechas de tipo Date y devuelva el el número de días hábiles que hay entre
+  las dos fechas.
+  startdate: objeto Fecha inicio
+  endDate: objeto Fecha inicio
+  return número de días hábiles entre las dos fechas*/
+function getWorkingDays(startdate, endDate) {
+  return 0;
+}
+
+
 
 function stringAEnt(fecha) {
   fecha = document.getElementById("fecha").value;
@@ -60,24 +103,5 @@ function getDays(startdate, endDate) {
 
   return totalDias;
 }
-
-/* Función que suma o resta un número de dias hábiles según el valor de operation 
-   startdate: objeto Fecha 
-   days: número de días hábiles
-   return el resultado como un string en formato dd/mm/YYYY
-*/
-function calcWorkingDate(startdate, days) {
-  return new Date().toLocaleDateString("es-ES");
-}
-
-/* Función que recibe dos fechas de tipo Date y devuelva el el número de días hábiles que hay entre
-  las dos fechas.
-  startdate: objeto Fecha inicio
-  endDate: objeto Fecha inicio
-  return número de días hábiles entre las dos fechas*/
-function getWorkingDays(startdate, endDate) {
-  return 0;
-}
-
 
 

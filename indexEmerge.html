@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Calculadora</title>
     
-<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
-    <link rel="stylesheet" type="text/html" href="css/mystyle.css">
-    <script src="js/interface.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css">  
 </head>
 
 <body>
-    <center>
-        <h1>Calculadora días</h1>
+    <header>
+            <h1>Calculadora días</h1>
+    </header>
+        
 
 
         <div class="tab">
@@ -29,19 +29,13 @@
                 <h4>Los días pueden ser negativos</h4>
                 <p>
                         <input type="date" id="fecha">
-                        <button onclick="hola()">Click</button>
-                        <script> function hola() {
-                                fecha = document.getElementById("fecha").value;
-                                console.log(fecha);
-                            }</script>
 <br>
                         Introduce el número de días:
-                        <input type="number" id="days">
-                        <button onclick="hola2()">Click</button>
-                        <script> function hola2() {
-                                fecha = document.getElementById("days").value;
-                                console.log(fecha);
-                            }</script>
+                        <input type="number" id="days"><br>
+                        Selecciona el tipo de días: <br>
+                        <input type="radio" name="tipoDia" id="natural" checked> Naturales <br>
+                        <input type="radio" name="tipoDia" id="habil"> Hábiles <br>
+                        <button id="calcular">Calcula</button>
                         
 
 
@@ -76,5 +70,6 @@
 
     </center>
 </body>
-
+<script src="js/interface.js"></script>
+<script src="js/dateCalc.js"></script>
 </html>
