@@ -5,76 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Calculadora</title>
     
-<link rel="stylesheet" type="text/css" href="../css/mystyle.css">
-    <link rel="stylesheet" type="text/html" href="css/mystyle.css">
-    <script src="js/interface.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css">  
 </head>
 
 <body>
-    <center>
-        <h1>Calculadora días</h1>
-
-
+    <header>
+            <h1>Calculadora días</h1>
+    </header>
         <div class="tab">
             <button class="tablinks" onclick="abrirPesta(event, 'Suma')" id="defaultOPen">Suma</button>
 
-            <button class="tablinks" onclick="abrirPesta(event, 'Rango')">Rango</button>
+            <button class="tablinks" onclick="abrirPesta(event, 'Rango')">Rango</button><br><br>
 
 
             <!-- Tab content -->
-            <div id="Suma" class="tabcontent"><br>
-                <h3>Introduce una fecha y un número de días para calcular qué fecha será</h3>
-                <h4>Los días pueden ser negativos</h4>
+            <div id="Suma" class="tabcontent">
+                <p><h3>Introduce una fecha y un número de días para calcular qué fecha será</h3>
+                <h4>Los días pueden ser negativos</h4></p>
                 <p>
-                        <input type="date" id="fecha">
-                        <button onclick="hola()">Click</button>
-                        <script> function hola() {
-                                fecha = document.getElementById("fecha").value;
-                                console.log(fecha);
-                            }</script>
-<br>
-                        Introduce el número de días:
-                        <input type="number" id="days">
-                        <button onclick="hola2()">Click</button>
-                        <script> function hola2() {
-                                fecha = document.getElementById("days").value;
-                                console.log(fecha);
-                            }</script>
-                        
-
-
+                        Fecha de inicio: <br>
+                        <input type="date" id="fecha"><br><br>
+                        Introduce el número de días: <br>
+                        <input type="number" id="days"><br><br>
+                        Selecciona el tipo de días: <br>
+                        <input type="radio" name="tipoDiaSuma" id="natural" checked> Naturales <br>
+                        <input type="radio" name="tipoDiaSuma" id="habil"> Hábiles <br>
                 </p>
+                <button id="calcularSuma">Calcula</button>
             </div>
 
             <div id="Rango" class="tabcontent"><br>
                 <h3>Introduce dos fechas distintas y calcula cuántos días hay entre ellas</h3>
                 <p>
-                        <input type="date" id="startdate">
-                        <button onclick="hola()">Click</button>
-                        <script> function hola() {
-                                fecha = document.getElementById("startdate").value;
-                                console.log(fecha);
-                            }</script> 
+                        Fecha de inicio: <br>
+                        <input type="date" id="startdate"><br><br>
 
-                        <input type="date" id="enddate">
-                        <button onclick="hola()">Click</button>
-                        <script> function hola() {
-                               fecha = document.getElementById("enddate").value;
-                               console.log(fecha2);
-    }</script>
+                        Fecha final: <br>
+                        <input type="date" id="enddate"><br><br>
+
+                        Selecciona el tipo de días: <br>
+                        <input type="radio" name="tipoDiaRango" id="natural" checked> Naturales <br>
+                        <input type="radio" name="tipoDiaRango" id="habil"> Hábiles <br>
                 </p>
+                <button id="calcularRango">Calcula</button>
             </div>
         </div>
-
-        <script> document.getElementById("defaultOPen").click();</script>
-
-
-
-       
-
-    </center>
+        <div id="divSuma">
+                <h3>La fecha final es: </h3>
+                <h2 id="resulSuma"></h2>
+            </div>
+            <div id="divRango">
+                    <h3>La diferencia de días es: </h3>
+                    <h2 id="resulRango"></h2>
+            </div>
 </body>
-
+<script src="js/interface.js"></script>
+<script src="js/dateCalc.js"></script>
 </html>

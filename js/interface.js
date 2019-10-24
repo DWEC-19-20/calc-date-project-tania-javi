@@ -25,3 +25,4 @@ function abrirPesta(evt, pesta) {
   document.getElementById(pesta).style.display = "block";
   evt.currentTarget.className += " active";
 }
+

@@ -1,12 +1,13 @@
-/* Style the tab */
+/* Estilo de la pestaña */
 .tablinks {
     overflow: hidden;
     border: 1px solid rgb(165, 75, 75);
     background-color: #e28c8c;
   }
   
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
+  
+  /* Estilo de los botones del contenido de las pestañas */
+  .tab .tablinks {
     background-color: inherit;
     float: left;
     border: none;
@@ -31,5 +32,23 @@
     display: none;
     padding: 6px 12px;
     border: 1px solid #e28c8c;
-    
+    height: auto;
+    text-align: center;
+  }
+
+  .tabcontent button {
+    background-color: inherit;
+    border: 1px solid #e28c8c;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+
+  /*Estilo del footer con el resultado*/
+
+  #divSuma {
+    display: none;
+  }
+  
+  #divRango {
+    display: none;
   }
