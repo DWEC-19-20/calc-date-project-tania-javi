@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculadora</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet"> 
     
 <link rel="stylesheet" type="text/css" href="../css/mystyle.css">  
 </head>
@@ -27,11 +28,13 @@
                 <p>
                         Fecha de inicio: <br>
                         <input type="date" id="fecha"><br><br>
+
                         Introduce el número de días: <br>
                         <input type="number" id="days"><br><br>
+                        
                         Selecciona el tipo de días: <br>
-                        <input type="radio" name="tipoDiaSuma" id="natural" checked> Naturales <br>
-                        <input type="radio" name="tipoDiaSuma" id="habil"> Hábiles <br>
+                        <input type="radio" name="tipoDiaSuma" id="naturalSuma" checked> Naturales <br>
+                        <input type="radio" name="tipoDiaSuma" id="habilSuma"> Hábiles <br>
                 </p>
                 <button id="calcularSuma">Calcula</button>
             </div>
@@ -40,14 +43,14 @@
                 <h3>Introduce dos fechas distintas y calcula cuántos días hay entre ellas</h3>
                 <p>
                         Fecha de inicio: <br>
-                        <input type="date" id="startdate"><br><br>
+                        <input type="date" id="startDate"><br><br>
 
                         Fecha final: <br>
-                        <input type="date" id="enddate"><br><br>
+                        <input type="date" id="endDate"><br><br>
 
                         Selecciona el tipo de días: <br>
-                        <input type="radio" name="tipoDiaRango" id="natural" checked> Naturales <br>
-                        <input type="radio" name="tipoDiaRango" id="habil"> Hábiles <br>
+                        <input type="radio" name="tipoDiaRango" id="naturalRango" checked> Naturales <br>
+                        <input type="radio" name="tipoDiaRango" id="habilRango"> Hábiles <br>
                 </p>
                 <button id="calcularRango">Calcula</button>
             </div>

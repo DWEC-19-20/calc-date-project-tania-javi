@@ -1,32 +1,8 @@
-/* EVENTOS
-*/
-
-
-
-
-
 /* OPERACIONES
 */
 
 const MILSEGPORDIA = 86400000;
 
-/* Función que pasa los valores de las fechas de String a entero
-*/
-
-function stringAEnt(fecha) {
-  fecha = document.getElementById("fecha").value;
-  var fechaSalida= new Date(fecha);
-
-  return fechaSalida;
-}
-
-/* Función que devuelve el valor del input radio para seleccionar 
-   una suma o una resta
-*/
-
-function valorRadio() {
-
-}
 
 /* Función que suma o resta un número de dias naturales según el valor de operation 
    startdate: objeto Fecha 

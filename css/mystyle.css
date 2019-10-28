@@ -1,3 +1,13 @@
+/* Estilo del body*/
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+/* Estilo del header*/
+header {
+  text-align: center;
+  background-color: #e28c8c;
+}
+
 /* Estilo de la pestaña */
 .tablinks {
     overflow: hidden;
@@ -46,9 +56,11 @@
   /*Estilo del footer con el resultado*/
 
   #divSuma {
+    text-align: center;
     display: none;
   }
   
   #divRango {
+    text-align: center;
     display: none;
   }
