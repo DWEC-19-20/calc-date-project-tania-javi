@@ -3,13 +3,13 @@ var assert = chai.assert,
 
 suite("Testing calcDate", function() {
     test("Test pasado", function() {
-        expect(calcDate(new Date(2019, 09, 14),14)).to.equal("28/10/2019");
+        expect(calcDate(new Date("2019-10-14"),14)).to.equal("28/10/2019");
     });
     test("Test pasado", function() {
-        expect(calcDate(new Date(2019, 09, 28),-14)).to.equal("14/10/2019");
+        expect(calcDate(new Date("2019-10-28"),-14)).to.equal("14/10/2019");
     });
     test("Test pasado", function() {
-        expect(calcDate(new Date(2019, 09, 10),10953)).to.equal("5/10/2049");
+        expect(calcDate(new Date("2019-10-10"),10953)).to.equal("5/10/2049");
     });
 });
 
