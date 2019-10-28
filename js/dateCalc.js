@@ -9,8 +9,10 @@
 */
 
 const MILSEGPORDIA = 86400000;
-const ARRAYFESTIVOS= [new Date('2019/01/01'), new Date('2019/01/06'), new Date('2019/04/01'), new Date('2019/07/15'), new Date('2019/07/12'), new Date('2019/10/01'), new Date('2019/11/06'), new Date('2019/11/08'), new Date('2019/11/25')];
-const festivo=false;
+const ARRAYFESTIVOS = [new Date('2019/01/01'), new Date('2019/01/06'), new Date('2019/04/01'), new Date('2019/07/15'), new Date('2019/07/12'), new Date('2019/10/01'), new Date('2019/11/06'), new Date('2019/11/08'), new Date('2019/11/25')];
+const festivo = false;
+var contFest = 0;
+var contFines = 0;
 /* Función que pasa los valores de las fechas de String a entero
 */
 
@@ -21,22 +23,37 @@ const festivo=false;
    return el resultado como un string en formato dd/mm/YYYY
 */
 
-function esFestivo(startdate){
-  var entrada=startdate.getMonth(); 
-  var entrada2=startdate.getDate();
-  for ($i=0; $i<ARRAYFESTIVOS.length; $i++){
-    var diaFesti=ARRAYFESTIVOS[$i].getMonth(); 
-    var diaFesti2=ARRAYFESTIVOS[$i].getDate();
-    if ((entrada==diaFesti) && (entrada2==diaFesti2)){
-      festivo=true;
-    } 
+function esFestivo(startdate) {
+  var entrada = startdate.getMonth();
+  var entrada2 = startdate.getDate();
+  for ($i = 0; $i < ARRAYFESTIVOS.length; $i++) {
+    var diaFesti = ARRAYFESTIVOS[$i].getMonth();
+    var diaFesti2 = ARRAYFESTIVOS[$i].getDate();
+    if ((entrada == diaFesti) && (entrada2 == diaFesti2)) {
+      festivo = true;
+    }
   }
   return festivo;
-
 }
 
 function calcWorkingDate(startdate, days) {
- 
+  var diasFinal = days;
+  for (let i = 0; i < days; i++) {
+    esFestivo(startdate);
+    if (festivo == true) {
+      contFest++;
+    }
+
+    var entrada2 = startdate.getDay();
+    if (entrada2 == 0 || entrada2 == 6) {
+      contFines++;
+    }
+    entrada = startdate.getTime();
+    var fechaFinal = entrada +  MILSEGPORDIA; 
+  }
+
+  diasFinal = diasFinal - contFines;
+  diasFinal= diasFinal -contFines;
   return new Date().toLocaleDateString("es-ES");
 }
 /*
@@ -58,7 +75,7 @@ function getWorkingDays(startdate, endDate) {
 
 function stringAEnt(fecha) {
   fecha = document.getElementById("fecha").value;
-  var fechaSalida= new Date(fecha);
+  var fechaSalida = new Date(fecha);
 
   return fechaSalida;
 }
