@@ -1,15 +1,14 @@
 var ventana;
-var config = "resizable=no, width=800, height=800,scrollbars=yes,left=300, top=100";
+var config = "resizable=no, width=800, height=750,scrollbars=yes,left=300, top=100";
 
 function abrir_Popup() {
   ventana = window.open("indexEmerge.html", "CALCULA_DÍAS", config);
 }   
 
 function abrirPesta(evt, pesta) {
-  // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
+  // Esconder elementos .tabcontent
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
